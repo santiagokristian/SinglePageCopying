@@ -1,0 +1,112 @@
+<div class="container contact-us">
+  <div class="sub-row">
+    <div class="col-md-7 col-sm-12 col-12 contact-form">
+      <div class="sub-row justify-content-center main-contact">
+        <div class="title h5">Contact us Today</div>
+        <div class="sub-title col-md-6 col-sm-12 col-12">Brief into paragraph this section. Bis porepelent quam nam ut
+          facilio riberium sitatur
+          aut
+          proreperiata volorer.</div>
+        @if(isSubmitted){
+        <div class="sub-row">Thank you for your submission.</div>
+        <div class="sub-row"><button class="btn btn-secondary" (click)="resetForm()">Submit Again</button></div>
+        }@else{
+        <div class="form">
+          <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+            <div class="sub-row justify-content-center">
+              <div class="col-md-4 col-sm-12 col-12">
+                <input type="text" class="form-control" formControlName="fullName" placeholder="Full Name*"
+                  ngbTooltip="test" placement="top" [ngClass]="{ 'is-invalid': checkForValidity('fullName')}">
+              </div>
+              <div class="col-md-4 col-sm-12 col-12"><input type="text" formControlName="email" class="form-control"
+                  placeholder="Email Address*" [ngClass]="{ 'is-invalid': checkForValidity('email')}"></div>
+              <div class="col-md-4 col-sm-12 col-12"><input type="text" formControlName="contactNo" class="form-control"
+                  placeholder="Contact Number" [ngClass]="{ 'is-invalid': checkForValidity('contactNo')}"></div>
+            </div>
+            <div class="sub-row justify-content-center">
+              <div class="col-md-4 col-sm-12 col-12">
+                <select class="form-select" formControlName="bookMeeting" id="bookMeeting" (change)="checkBooking()"
+                  [ngClass]="{ 'is-invalid': checkForValidity('bookMeeting')}">
+                  <option value="" selected disabled>Book a Meeting</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-sm-12 col-12">
+                <select class="form-select" formControlName="daySelect"
+                  [ngClass]="{ 'is-invalid': checkForValidity('daySelect')}" id="prefDay">
+                  <option value="" selected disabled>{{dayPlaceholder}}</option>
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-sm-12 col-12">
+                <select class="form-select" formControlName="timeSelect"
+                  [ngClass]="{ 'is-invalid': checkForValidity('timeSelect')}" id="prefTime">
+                  <option value="" selected disabled>
+                    {{timePlaceholder}}</option>
+                  <option value="am">AM</option>
+                  <option valu="pm">PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="sub-row justify-content-center">
+              <div class="col-md-12 col-sm-12 col-12">
+                <textarea class="form-control" id="message-area" formControlName="message"
+                  [ngClass]="{ 'is-invalid': checkForValidity('message')}" rows="3" placeholder="Message"></textarea>
+              </div>
+            </div>
+            <div class="sub-row justify-content-end">
+              <div class="col-md-2 col-sm-2 col-12">
+                <button class="btn btn-primary btn-block btn-sub" type="button"
+                  (click)="onSubmit($event)">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-12 col-12 contact-details">
+      <div class="title h5">Contact Us</div>
+      <hr>
+      <div class="details">
+        <ul>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="locationIcon" />
+            </div>Find an Adviser
+          </li>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="commentIcon" />
+            </div>Talk to an accountant
+          </li>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="houseIcon" />
+            </div>Talk to a mortgage broker
+          </li>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="phoneIcon" />
+            </div>0800 700 699
+          </li>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="emailIcon" />
+            </div>reception&#64;havenadviser.com
+          </li>
+          <li>
+            <div class="col-md-1 col-sm-1 col-2">
+              <fa-icon class="icon-logo" [icon]="facebookIcon" />
+            </div>Be part of our facebook community
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

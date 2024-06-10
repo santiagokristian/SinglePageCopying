@@ -1,0 +1,13 @@
+<div class="news-blog container">
+  <div class="container header">
+    <div class="h5">News & Blog</div>
+    <hr />
+  </div>
+  <div class="list container">
+    <ul>
+        @for(item of listItems; track $index){
+            <li><div class="li-div">{{item}} <img class="arrow-logo float-end" src="/assets/images/white-arrow.png" alt="arrow"/></div></li>
+        }
+    </ul>
+  </div>
+</div>

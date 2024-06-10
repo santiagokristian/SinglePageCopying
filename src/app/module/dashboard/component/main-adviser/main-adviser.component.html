@@ -1,0 +1,45 @@
+<div class="container main-adviser">
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" (click)="isCollapsed = !isCollapsed" type="button" data-toggle="collapse"
+        data-target="#navbarNav" aria-controls="navbarNav" [attr.aria-expanded]="!isCollapsed"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav" *ngIf="menuList$ | async as menuDets">
+          @for(menu of menuDets;track $index){
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="(activeId === menu.id)?'active':''"
+              [href]="'/'+ menu.item ">{{menu.item}}</a>
+          </li>
+          }
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="sub-row">
+      <div class="col-md-9 col-sm-12">
+        <img src="/assets/images/video-img.png" class="video-img" />
+      </div>
+      <div class="col-md-3 col-sm-12 advisor">
+
+        <div class="title h3">Why have a financial adviser?</div>
+        <div class="description">
+          <div class="p1">Haven was created out of the need to simply do things better. With Specialist advisers across
+            a range of financial services, we will offer you the best, practival advice for your unique situation</div>
+          <div class="p2">Our finacial advisers span the north and south island making us convenietly positioned wherever you need
+            us.</div>
+        </div>
+
+        <div class="learn-more">
+            <button class="simple-btn">Learn more about our advisers <img class="arrow-logo float-end" src="/assets/images/white-arrow.png" alt="arrow"/> </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

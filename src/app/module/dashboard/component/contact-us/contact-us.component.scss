@@ -1,0 +1,87 @@
+.contact-us {
+  --default-blue: #24c2ea;
+  --highlight-blue:#1991b0;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  input,
+  select,
+  textarea {
+    background-color: unset;
+    color: white;
+    border-radius: 0.125rem;
+    &::placeholder {
+      color: white;
+    }
+    &::-moz-placeholder {
+      color: white;
+    }
+    option{
+        color:black;
+        &:disabled{
+            color:rgb(170, 170, 170);
+        }
+    }
+  }
+  select{
+    background-image: url(../../../../../assets/images/white-down-arrow.png);
+  }
+  .sub-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .details {
+    padding-top: 1rem;
+  }
+  .contact-details {
+    padding: 2rem 2.5rem;
+    .title {
+      color: var(--default-blue);
+      font-weight: 300;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 0.5rem;
+      li {
+        display: flex;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .icon-logo {
+      color: #d3d4d4;
+    }
+  }
+  .contact-form{
+    padding: 2rem 2.5rem;
+    background-color: var(--default-blue);
+    color: white;
+    .sub-title{
+        margin-bottom: 1.5rem;
+    }
+    .main-contact{
+        flex-direction: column;
+        align-items: center;
+    }
+    .form{
+        [class*="col-"]{
+            padding-right: 0.5rem;
+            margin-bottom: 0.5rem;
+          } 
+    }
+    .btn-block{
+        width: 100%;
+    }
+    .btn-sub{
+        background-color: #fff;
+        color:var(--default-blue);
+        border-radius: 0.125rem;
+        border: 1px solid var(--default-blue);
+        &:hover{
+            background-color:var(--highlight-blue);
+            color:white;
+        }
+    }
+  }
+}

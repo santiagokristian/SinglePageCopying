@@ -1,0 +1,42 @@
+<div class="container footer">
+  <div class="sub-row news-letter justify-content-center">
+    @if(isSubmitted){
+    <div class="sub-row">Thank you for your Signup.</div>
+    <div class="sub-row"><button type="submit" class="btn btn-light btn-block"
+        (click)="resetForm()">Signup Another</button></div>
+    }@else {
+    <form class="sub-row" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <div class="col-md-row-4 col-sm-4 col-12">SIGN UP TO OUR NEWSLETTER</div>
+      <div class="col-md-row-2 col-sm-3 col-12"><input type="text" class="form-control" placeholder="Full Name"
+          formControlName="fullName" [ngClass]="{ 'is-invalid': checkForValidity('fullName')}"></div>
+      <div class="col-md-row-2 col-sm-3 col-12"><input type="text" class="form-control" placeholder="Email Address"
+          formControlName="email" [ngClass]="{ 'is-invalid': checkForValidity('email')}"></div>
+      <div class="col-md-row-2 col-sm-1 col-12"><button type="button" class="btn btn-primary btn-block btn-sm btn-sub"
+          (click)="onSubmit($event)">Submit</button></div>
+    </form>}
+  </div>
+  <hr>
+  <div class="sub-row justify-content-center logo-div">
+    <div class="image-logo"><img src="/assets/images/logo.png" class="logo" /></div>
+  </div>
+  <div class="sub-row justify-content-center sub-content">
+
+    <div class="col-auto">HOME</div>
+    <div class="col-auto">OUR SERVICES</div>
+    <div class="col-auto">ABOUT US</div>
+    <div class="col-auto">TESTIMONIALS</div>
+    <div class="col-auto">BLOG</div>
+    <div class="col-auto">CONTACT US</div>
+
+  </div>
+  <div class="sub-row justify-content-center">
+    <div class="footer-note">
+      <div>0800 700 699</div>
+      <div>reception&#64;havenadviser.com</div>
+    </div>
+  </div>
+  <hr class="low">
+  <div class="sub-row justify-content-end copyright">
+    <div>Copyright &#169; 2017 Haven Advisers Limited. All rights reserved.</div>
+  </div>
+</div>
